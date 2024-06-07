@@ -14,26 +14,26 @@ if ($_SESSION['username'] == '') {
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <title> Praktikum Web 2</title>
     <style>
-    body {
-        margin-bottom: 6em;
-    }
+        body {
+            margin-bottom: 6em;
+        }
 
-    * {
-        font-size: 14px;
-    }
+        * {
+            font-size: 14px;
+        }
 
-    footer {
-        position: fixed;
-        /* height: 100px; */
-        bottom: 0;
-        width: 100%;
-        background: #1fb359;
-        padding: 10px 0;
-        color: #fff;
-        font-family: Arial, Helvetica, sans-serif;
-        letter-spacing: 1.5px;
-        text-align: center;
-    }
+        footer {
+            position: fixed;
+            /* height: 100px; */
+            bottom: 0;
+            width: 100%;
+            background: #1fb359;
+            padding: 10px 0;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1.5px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -47,6 +47,7 @@ if ($_SESSION['username'] == '') {
             <div class="col-md-9 col-sm-12">
                 <?php include '../connection.php'; ?>
                 <?php
+
                 // error_reporting(0);
                 switch ($_GET['page']) {
                     default:
@@ -71,7 +72,6 @@ if ($_SESSION['username'] == '') {
                     case "mahasiswa-update";
                         include "../mahasiswa/mahasiswa_update.php";
                         break;
-
                     // matakuliah
                     case "matakuliah-show";
                         include "../matakuliah/matakuliah_show.php";
