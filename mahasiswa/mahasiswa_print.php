@@ -23,6 +23,6 @@ while ($data = mysqli_fetch_array($result)) {
     $pdf->Cell(50, 6, $data['nama'], 1, 0);
     $pdf->Cell(100, 6, $data['alamat'], 1, 0);
     $pdf->Cell(50, 6, $data['email'], 1, 0);
-    $pdf->Cell(30, 6, $data['telpon'], 1, 1);
+    $pdf->Cell(30, 6, $data['telepon'], 1, 1);
 }
 $pdf->Output();
