@@ -3,67 +3,74 @@
 // Getting id from url
 $id = $_GET['id'];
 // Fetech user data based on id
-$result = mysqli_query($conn, "SELECT * FROM mahasiswa WHERE id=$id");
+$result = mysqli_query($conn, "SELECT * FROM matakuliah WHERE id_matkul=$id");
 while ($data = mysqli_fetch_array($result)) {
-    $nim = $data['nim'];
-    $nama = $data['nama'];
-    $alamat = $data['alamat'];
-    $jk = $data['jenis_kelamin'];
-    $email = $data['email'];
-    $telepon = $data['telepon'];
+    $kode_matkul = $data['kode_matkul'];
+    $nama_matkul = $data['nama_matkul'];
+    $sks = $data['sks'];
+    $semester = $data['semester'];
 }
 ?>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="panel-title">Ubah Data Mahasiswa</h3>
+                <h3 class="panel-title">Ubah Data Matakuliah</h3>
             </div>
             <div class="card-body">
-                <form method="POST" action="?page=mahasiswa-update" class="form-horizontal">
+                <form method="POST" action="?page=matakuliah-update" class="form-horizontal">
                     <div class="form-group">
-                        <label for="nim" class="col-sm-2 control-label">NIM</label>
+                        <label for="kode_matkul" class="col-sm-2 control-label">Kode Matakuliah</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="nim" value="<?php echo $nim; ?>" required>
+                            <input type="text" class="form-control" name="kode_matkul"
+                                value="<?php echo $kode_matkul; ?>" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="nama" class="col-sm-2 control-label">Nama Lengkap</label>
+                        <label for="nama_matkul" class="col-sm-2 control-label">Nama Matakuliah</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="nama" value="<?php echo $nama; ?>" required>
+                            <input type="text" class="form-control" name="nama_matkul"
+                                value="<?php echo $nama_matkul; ?>" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="nama" class="col-sm-2 control-label">Jenis Kelamin</label>
+                        <label for="sks" class="col-sm-2 control-label">SKS</label>
                         <div class="col-sm-10">
-                            <select class="form-control" name="jenis_kelamin">
+                            <select class="form-control" name="sks">
                                 <option disabled> Pilih </option>
-                                <option <?php if ($jk == "Pria")
-                                    echo 'selected'; ?> value="Pria">Pria</option>
-                                <option <?php if ($jk == "Wanita")
-                                    echo 'selected'; ?> value="Wanita">Wanita</option>
+                                <option <?php if ($sks == "1")
+                                    echo 'selected'; ?> value="1">1</option>
+                                <option <?php if ($sks == "2")
+                                    echo 'selected'; ?> value="2">2</option>
+                                <option <?php if ($sks == "3")
+                                    echo 'selected'; ?> value="3">3</option>
+                                <option <?php if ($sks == "4")
+                                    echo 'selected'; ?> value="4">4</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="alamat" class="col-sm-2 control-label">Alamat</label>
+                        <label for="semester" class="col-sm-2 control-label">semester</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="alamat" value="<?php echo $alamat; ?>"
-                                required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">Email</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" name="email" value="<?php echo $email; ?>"
-                                required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="telepon" class="col-sm-2 control-label">Telepon</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" name="telepon" value="<?php echo $telepon; ?>"
-                                required>
+                            <select class="form-control" name="semester">
+                                <option disabled> Pilih </option>
+                                <option <?php if ($semester == "1")
+                                    echo 'selected'; ?> value="1">1</option>
+                                <option <?php if ($semester == "2")
+                                    echo 'selected'; ?> value="2">2</option>
+                                <option <?php if ($semester == "3")
+                                    echo 'selected'; ?> value="3">3</option>
+                                <option <?php if ($semester == "4")
+                                    echo 'selected'; ?> value="4">4</option>
+                                <option <?php if ($semester == "5")
+                                    echo 'selected'; ?> value="5">5</option>
+                                <option <?php if ($semester == "6")
+                                    echo 'selected'; ?> value="6">6</option>
+                                <option <?php if ($semester == "7")
+                                    echo 'selected'; ?> value="7">7</option>
+                                <option <?php if ($semester == "8")
+                                    echo 'selected'; ?> value="8">8</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
